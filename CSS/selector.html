@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* Universal selector */
+        * {
+            color: red;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Element selector */
+        h1 {
+            color: black;
+        }
+        p {
+            background-color: aqua;
+        }
+        /* id selector */
+        #nose {
+            background-color: pink;
+            font-size: 30px;
+        }
+
+        /* Class selector */
+        .eye-makeup {
+            color: brown;
+            background-color: white;
+        }
+
+        /* Attribute selector */
+        a[title="Google Website"]{
+            font-size: 32px;
+        }
+        input[type="email"]{
+            background-color: brown;
+        }
+
+        /* Descendent selector */
+        div p {
+            background-color: yellow;
+        }
+
+        /* Child selector */
+        div>p {
+            color: black;
+        }
+
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <h1>Selector</h1>
+    <p>Universal Selector</p>
+    <p id="nose">Nose</p>
+    <p class="eye-makeup">Left Eye</p>
+    <p class="eye-makeup">Right Eye</p>
+
+    <a href="" title="Google Website">Google</a>
+    <input type="email" name="" id="">
+    <input type="text" name="id">
+
+    <div>
+        <p>This is paragraph 1</p>
+        <p>This is paragraph 2</p>
+        <p>This is paragraph 3</p>
+        
+        <span>
+
+            <p>This is paragraph 4 </p>
+        </span>        
+    </div>
+    
+</body>
+</html>

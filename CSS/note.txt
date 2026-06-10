@@ -1,0 +1,24 @@
+CSS - Cascading style sheet
+CSS 3
+
+Selector {
+    property: value;
+}
+
+face {
+    foundation: tona;
+
+}
+
+hand {
+    skin-care: bodylotation;
+}
+
+eyes-makeup {
+    color: brown;
+}
+
+CS Three way to insert CSS
+-Internal CSS
+-External CSS
+-Inline CSS

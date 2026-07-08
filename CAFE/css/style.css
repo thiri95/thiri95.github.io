@@ -1,0 +1,292 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1814;
+    color: #cda45e;
+}
+
+/* Navbar */
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 10px;
+    margin: 20px;
+    gap: 20px;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand img {
+    width: 60px;
+    height: 60px;
+}
+
+.brand h2 {
+    letter-spacing: 3px;
+}
+
+.nav-menu ul {
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: end;
+    gap: 20px;
+}
+
+.nav-menu ul li {
+    list-style: none;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #cda45e;
+    padding: 15px;
+}
+
+.nav-menu ul li a:hover {
+    background-color: #cda45e;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Hero Image  */
+.hero-container {
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/hero-image.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+
+    /* for text  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hero-text p {
+    margin: 20px 0;
+}
+
+.hero-text p a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #cda45e;
+    color: white;
+    border-radius: 9px;
+    text-decoration: none;
+}
+
+/* Signature menu  */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 150px 70px;
+    column-gap: 50px;
+}
+
+.menu-img {
+    width: 100%;
+    height: auto;
+}
+
+.menu-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    row-gap: 30px;
+}
+
+.menu-heading {
+    font-size: 3rem;
+    color: white;
+}
+
+.menu-about {
+    font-size: 1.125rem;
+}
+
+/* About  */
+.about {
+    background-image: url("../images/home-about.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 50px;
+}
+
+/* Silone Tea */
+.silone-tea {
+    background-image: url("../images/silonetea-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 50px;
+}
+
+.silone-img {
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+/* Our popular Menu  */
+.our-menu-title {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin: 150px 0 50px 0;
+}
+
+.our-menu {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 20px;
+    margin: 70px;
+}
+
+.menu-item {
+    background-color: #26231d;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item-img {
+    width: 100%;
+    height: auto;
+}
+
+.menu-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.item-name {
+    font-size: 1.3rem;
+    color: white;
+    margin-top: 10px;
+}
+
+.item-price {
+    font-size: 1.2rem;
+    padding-top: 10px;
+}
+
+/* View More  */
+.view-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 70px 0;
+}
+
+/* Contact Us  */
+.contact-us h1 {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin: 150px 0 50px 0;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 100px 70px;
+}
+
+.info {
+    display: flex;
+    padding: 20px 0;
+}
+
+.contact-icon {
+    position: relative;
+    background-color: #cda45e;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Contact form  */
+.form-group {
+    margin-bottom: 20px;
+ 
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1814;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Footer  */
+.footer {
+    background-color: black;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+}
+
+.footer-title {
+    color: #cda45e;
+    font-weight: bold;
+}
+
+.dev {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}

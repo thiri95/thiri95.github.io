@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes change_animation {
+            from {
+                background-color: red;
+                transform: translateX(0);
+            }
+            to {
+                background-color: yellowgreen;
+                transform: translateX(300px);
+            }
+        }
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: change_animation;
+            animation-duration: 5s;
+            animation-iteration-count: 3;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Animation Lesson</h1>
+    <div></div>
+</body>
+</html>

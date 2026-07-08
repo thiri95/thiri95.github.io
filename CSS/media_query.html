@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .conatiner {
+            padding: 20px;
+        }
+
+        .card-item {
+            background-color: #15b400;
+            margin: 10px;
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.875rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .card {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (min-width: 768px) and (min-width: 1023px) {
+            .card {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .card {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            .card-item {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-item">Card 1</div>                       
+            <div class="card-item">Card 2</div>
+            <div class="card-item">Card 3</div>
+            <div class="card-item">Card 4</div> 
+            <div class="card-item">Card 5</div>
+        </div>
+    </div>
+</body>
+</html>

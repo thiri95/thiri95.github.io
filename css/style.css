@@ -1,0 +1,734 @@
+/* ၁။ Website တစ်ခုလုံးရဲ့ အခြေခံကို သတ်မှတ်ခြင်း */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* စာလုံးပုံစံကို သန့်ရှင်းသွားအောင်လို့ပါ */
+}
+
+body {
+    background-color: #fcf8f2; /* ဆိုင်နဲ့လိုက်ဖက်မယ့် ခရင်မ်ရောင်နုနုလေး */
+    color: #333;
+}
+
+/* ၂။ Navigation Menu ကို ဘေးတိုက် တန်းစီပြီး လှပအောင် ပြင်ခြင်း */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #d63384; /* Donut Vibe ပန်းရောင်ရင့်ရင့်လေး */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d63384; /* Mouse တင်လိုက်ရင် အရောင်ပြောင်းမယ့် Effect */
+}
+
+/* ၃။ About Section ကို နောက်ခံပုံအပြည့်နှင့် အလယ်တွင် ကတ်ပြားဖြင့် ပြသခြင်း */
+#about-short {
+    position: relative;
+    padding: 100px 5%;
+    min-height: 550px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    
+    background-image: url('../images/home-about.jpg'); 
+    background-size: cover;        
+    background-position: center;   
+    background-repeat: no-repeat;
+    width: 100%;                   
+}
+
+/* ပုံပေါ်ကနေ မှောင်သွားအောင် အနက်ရောင် Overlay အုပ်ခြင်း */
+#about-short::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 240, 245, 0.4); 
+    z-index: 1;
+}
+
+/* စာသားများအတွက် အနောက်ကနေ အမှောင်ကတ်ပြားလေး ခံပေးခြင်း */
+.about-container {
+    position: relative;
+    z-index: 2; 
+    max-width: 750px; 
+    margin: 0 auto;
+    background-color: rgba(213, 195, 195, 0.75); 
+    backdrop-filter: blur(0.014px);
+    padding: 40px;                        
+    border-radius: 20px;                  
+    box-shadow: 0 8px 32px rgba(214, 51, 132, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.about-text h2 {
+    font-size: 42px;
+    color: #2b101d !important; 
+    margin-bottom: 20px;
+    font-weight: 700;    
+}
+
+.about-text p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #4a3b43 !important; 
+    margin-bottom: 30px;
+    font-weight: 500;  
+}
+
+/* Read Our Story ခလုတ်လေးကို ပုံစံဖော်ခြင်း */
+.btn-readmore {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #d63384; 
+    color: white !important;   
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-top: 15px;          
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4); 
+}
+
+.btn-readmore:hover {
+    background-color: #b02466;
+    transform: translateY(-2px); 
+}
+
+/* ၄။ Best Sellers Section ဒီဇိုင်း */
+#best-sellers {
+    padding: 80px 5%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #2b101d;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* ကတ် ၃ ခုကို ညီညီညာညာ ဖြစ်အောင် Grid စနစ်သုံးတာပါ */
+.seller-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* ကတ်ပြားတစ်ခုချင်းစီရဲ့ ပုံစံ */
+.seller-card {
+    background-color: #fcf8f2;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.seller-card:hover {
+    transform: translateY(-10px); /* Mouse တင်ရင် ကတ်လေး ကြွတက်လာမယ့် Effect */
+}
+
+/* ကတ်ထဲက မုန့်ပုံတွေကို အချိုးကျ ညှိတာပါ */
+.seller-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.seller-card h3 {
+    font-size: 22px;
+    color: #2b101d;
+    margin-bottom: 10px;
+}
+
+.seller-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ၅။ Footer Section ဒီဇိုင်း */
+footer {
+    background-color: #2b101d; /* ဆိုင်ရဲ့ အဓိက ချောကလက်/ပန်းရောင်ရင့်ရင့် */
+    color: #ffffff;
+    padding: 60px 5% 20px 5%;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-box h2 {
+    font-size: 28px;
+    color: #d63384; /* Donut ပန်းရောင်လေး ကြွနေအောင်လို့ပါ */
+    margin-bottom: 15px;
+}
+
+.footer-box h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #d63384;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-box p {
+    font-size: 15px;
+    color: #dddddd;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* အောက်ဆုံး ကော်ပီရိုက်လိုင်း */
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ဖုန်းနဲ့ကြည့်ရင် တန်းစီရလွယ်အောင် ညှိတာပါ */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-box h3 {
+        display: block;
+        width: max-content;
+        margin: 0 auto 20px auto;
+    }
+}
+
+.designer-name {
+    color: #d63384; /* ကို Thi ဆိုတဲ့ နာမည်လေးကို ဒိုးနတ်ပန်းရောင်လေး ပြောင်းပေးတာပါ */
+    font-weight: 600;
+    border: #2b101d;
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcf8f2;
+    color: #4a3424;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+.menu-main-header {
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #f7e6d4, #fcf8f2);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.menu-main-header h1 {
+    font-size: 2.8rem;
+    color: #4a3424;
+    margin: 0 0 10px 0;
+}
+
+.menu-header {
+    text-align: center;
+    margin: 50px 0 25px 0;
+}
+
+.menu-header h2 {
+    color: #b57c4c;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.menu-header p {
+    font-style: italic;
+    color: #8c7662;
+    margin: 0;
+}
+
+/* ===================================================
+   ၁။ CAKES & DRINKS & SIGNATURE - GRID STYLE
+   =================================================== */
+.grid-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.grid-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.grid-card:hover {
+    transform: translateY(-5px);
+}
+
+.grid-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: 18px;
+}
+
+.card-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.25rem;
+    color: #4a3424;
+}
+
+.price {
+    display: block;
+    color: #e05275;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #7a6855;
+    line-height: 1.4;
+}
+
+/* ===================================================
+   ၂။ DONUTS & LUXURY - ROW STYLE (ပုံဘယ်၊ စာညာ)
+   =================================================== */
+.donut-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.donut-item {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    align-items: center;
+}
+
+.donut-image {
+    width: 180px;
+    height: 140px;
+    flex-shrink: 0;
+}
+
+.donut-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.donut-details {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: right; /* စာသားညာဘက်ကပ် */
+}
+
+.donut-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    color: #4a3424;
+}
+
+.donut-price {
+    display: block;
+    color: #e05275;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.donut-details p {
+    margin: 0;
+    color: #7a6855;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* ===================================================
+   ၃။ COUPON / SET BOX STYLE (ကူဗွန်ပုံစံ သီးသန့်ဒီဇိုင်း)
+   =================================================== */
+.coupon-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    padding: 10px;
+}
+
+.coupon-card {
+    background-color: #fffdf9;
+    border: 2px dashed #d4af37; /* ကူဗွန်ဖြတ်ပိုင်းပုံစံ ဒေါ့လိုင်းဘောင် */
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+    align-items: center;
+}
+
+.coupon-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #d4af37;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.coupon-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-right: 2px dashed #d4af37;
+}
+
+.coupon-details {
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.coupon-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.15rem;
+    color: #4a3424;
+}
+
+.coupon-price {
+    display: block;
+    color: #d4af37; /* ရွှေရောင်/ဝါရောင် ဈေးနှုန်း */
+    font-weight: bold;
+    font-size: 1.2rem;
+   margin-bottom: 5px;
+}
+
+.coupon-details p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7a6855;
+    line-height: 1.3;
+}
+
+/* ===================================================
+   ၄။ RESPONSIVE MEDIA QUERIES (ဖုန်း screens များအတွက်)
+   =================================================== */
+@media (max-width: 600px) {
+    .donut-item, .coupon-card {
+        flex-direction: column;
+    }
+    .donut-image, .coupon-card img {
+        width: 100%;
+        height: 180px;
+    }
+    .donut-details {
+        text-align: center;
+    }
+    .coupon-card img {
+        border-right: none;
+        border-bottom: 2px dashed #d4af37;
+    }
+    .coupon-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Signature Menu ကို အလယ်တည့်တည့် ပို့ပေးမည့် ကုဒ် */
+.signature-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;         /* flexbox သုံးလိုက်ပါတယ် */
+    justify-content: center; /* ကတ်ပြားကို အလယ်တည့်တည့် ရောက်စေပါတယ် */
+    padding: 10px;
+}
+
+/* Global Styles (Center-aligned basic styles) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Set global text-align to center */
+}
+
+body {
+    background-color: #fff5f7;
+}
+
+/* Navbar (Keep consistent but update logo structure) */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center horizontally in the viewport */
+    align-items: center; /* Center vertically */
+    padding: 20px 8%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-direction: column; /* Stack logo on top of menu on mobile if needed, but here we stack logo items */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+    margin-bottom: 20px; /* Space between logo area and menu */
+    text-align: left; /* Logo area stays left-aligned to itself */
+}
+
+.factory-logo-img {
+    height: 40px; /* Match height of image_1.png */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c2185b;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center the nav items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+nav a.active, nav a:hover {
+    color: #c2185b;
+}
+
+/* Contact Layout (Centered) */
+.contact-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the container content */
+}
+
+.section-title {
+    color: #c2185b;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.contact-wrapper {
+    display: flex;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    width: 100%; /* Take full container width */
+}
+
+/* Contact Info Side (Make info points stack nicely) */
+.contact-info {
+    flex: 1;
+    background-color: #c2185b;
+    color: #fff;
+    padding: 40px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center info text and icons */
+}
+
+.contact-info h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.info-item {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left; /* Icons/labels look best left-aligned internally */
+}
+
+/* Contact Form Side (Center form and its contents) */
+.contact-form {
+    flex: 1.5;
+    padding: 40px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form elements */
+}
+
+.contact-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    width: 100%; /* Form takes full container width */
+    max-width: 500px; /* But keep a reasonable width */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background-color: #fdfdfd;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #c2185b;
+}
+
+/* Match the button style with homepage and center it */
+.submit-btn {
+    background-color: #c2185b;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 100%; /* Stretch button across form */
+    max-width: 200px; /* But limit max width */
+}
+
+.submit-btn:hover {
+    background-color: #a0124a;
+}
+
+/* About Section Style (about.html အတွက်) */
+#about-short {
+    padding: 60px 0;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap; /* Screen သေးရင် အပေါ်အောက် အလိုအလျောက် ဆင်းရန် */
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(40, 38, 38, 0.05);
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* စာသားများ ဘယ်ဘက်ကပ်ရန် */
+}
+
+.about-text h2 {
+    color: #c06391;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #8b7f7f;
+    margin-bottom: 15px;
+}
